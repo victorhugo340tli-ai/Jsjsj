@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerador de Código Aleatório</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #codigo {
+            font-size: 24px;
+            margin: 20px;
+            font-weight: bold;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Gerador de Código Aleatório</h1>
+
+    <div id="codigo">Clique no botão</div>
+
+    <button onclick="gerarCodigo()">Gerar Código</button>
+
+    <script>
+        function gerarCodigo() {
+            const caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            const tamanho = 10; // tamanho do código
+            let codigo = "";
+
+            for (let i = 0; i < tamanho; i++) {
+                const indice = Math.floor(Math.random() * caracteres.length);
+                codigo += caracteres.charAt(indice);
+            }
+
+            document.getElementById("codigo").innerText = codigo;
+        }
+    </script>
+
+</body>
+</html>
